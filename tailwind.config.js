@@ -5,19 +5,22 @@ module.exports = {
     screens: {
       sm: "480px",
       md: "768px",
-      lg: "976px",
+      lg: "1020px",
       xl: "1440px",
     },
     extend: {
       colors: {
-        strongCyan: "hsl(171, 66%, 44%)",
-        lightBlue: "hsl(233, 100%, 69%)",
-        darkGrayishBlue: "hsl(210, 10%, 33%)",
-        grayishBlue: "hsl(201, 11%, 66%)",
+        softBlue: "hsl(231, 69%, 60%)",
+        softRed: "hsl(0, 94%, 66%)",
+        grayishBlue: "hsl(229, 8%, 60%)",
+        veryDarkBlue: "hsl(229, 31%, 21%)",
       },
       fontFamily: {
-        sans: ["Bai Jamjuree", "sans-serif"],
+        sans: ["Rubik", "sans-serif"],
       },
+      backgroundImage: () => ({
+        dots: "url('../images/bg-dots.svg')",
+      }),
     },
   },
   plugins: [],

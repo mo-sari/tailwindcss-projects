@@ -2,41 +2,78 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  h3 {
-    @apply mb-8 text-4xl font-bold text-darkGrayishBlue md:text-5xl;
+@media screen(lg) {
+  .bg-hero {
+    width: 2000px;
+    height: 300px;
+    left: 30%;
+    @apply absolute rounded-l-full top-52 bg-softBlue;
   }
 
-  h5 {
-    @apply mb-2 text-2xl font-bold text-darkGrayishBlue;
-  }
-}
-
-.section-container {
-  @apply max-w-6xl mx-auto text-center px-10;
-}
-
-.section-content {
-  @apply max-w-3xl mx-auto leading-9 text-center text-grayishBlue;
-}
-
-.button-container {
-  @apply flex flex-col justify-center w-full space-y-6 text-xl text-white md:flex-row md:space-y-0 md:space-x-4;
-}
-
-body {
-  background-image: url("../images/bg-header-desktop.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-@media (max-width: 576px) {
-  body {
-    background-image: url("../images/bg-header-mobile.png");
+  .bg-tabs {
+    width: 2000px;
+    height: 300px;
+    right: 60%;
+    @apply absolute rounded-r-full top-60 bg-softBlue;
   }
 }
 
 .ficon:hover {
-  filter: invert(53%) sepia(68%) saturate(434%) hue-rotate(121deg)
-    brightness(101%) contrast(94%);
+  filter: invert(53%) sepia(38%) saturate(3303%) hue-rotate(326deg)
+    brightness(101%) contrast(96%);
+}
+
+/* HAMBURGER MENU */
+
+.hamburger {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  transition: all 0.25s;
+  position: relative;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 3px;
+  top: 0;
+  left: 0;
+  background: #000;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+.hamburger-middle {
+  transform: translateY(7px);
+}
+
+.hamburger-bottom {
+  transform: translateY(14px);
+  background: #000;
+}
+
+.open {
+  transform: rotate(90deg);
+  transform: translateY(0px);
+  position: fixed;
+  top: 50px;
+  right: 25px;
+}
+
+.open .hamburger-top {
+  transform: rotate(45deg) translateY(6px) translateX(6px);
+  background-color: #fff;
+}
+
+.open .hamburger-middle {
+  display: none;
+}
+
+.open .hamburger-bottom {
+  transform: rotate(-45deg) translateY(6px) translateX(-6px);
+  background-color: #fff;
 }
